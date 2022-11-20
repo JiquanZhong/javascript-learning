@@ -421,3 +421,11 @@ const x = 2;
 ### JavaScript Comparison Operators
 
 ![Screenshot 2022-11-20 at 10.52.34](images/Screenshot 2022-11-20 at 10.52.34.png)
+
+### JavaScript Bitwise Operators
+
+![Screenshot 2022-11-20 at 10.54.22](images/Screenshot 2022-11-20 at 10.54.22.png)
+
+### JavaScript Logical Operators
+
+![Screenshot 2022-11-20 at 10.57.33](images/Screenshot 2022-11-20 at 10.57.33.png)
