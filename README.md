@@ -1,2 +1,2 @@
 # javascript-learning
-some note while reviewing javascript
+some notes while reviewing javascript
