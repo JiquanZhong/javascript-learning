@@ -429,3 +429,41 @@ const x = 2;
 ### JavaScript Logical Operators
 
 ![Screenshot 2022-11-20 at 10.57.33](images/Screenshot 2022-11-20 at 10.57.33.png)
+
+## JavaScript Objects
+
+It is a common practice to declare objects with the const keyword.
+
+```javascript
+const person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+```
+
+### Object Methods
+
+Objects can also have **methods**.
+
+Methods are **actions** that can be performed on objects.
+
+Methods are stored in properties as **function definitions**.
+
+```javascript
+const person = {
+  firstName: "John",
+  lastName : "Doe",
+  id       : 5566,
+  fullName : function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+```
+
+### What is **this**?
+
+| In an object method, `this` refers to the **object**.        |
+| ------------------------------------------------------------ |
+| Alone, `this` refers to the **global object**.               |
+| In a function, `this` refers to the **global object**.       |
+| In a function, in strict mode, `this` is `undefined`.        |
+| In an event, `this` refers to the **element** that received the event. |
+| Methods like `call()`, `apply()`, and `bind()` can refer `this` to **any object**. |
+
