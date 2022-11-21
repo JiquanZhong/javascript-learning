@@ -467,3 +467,227 @@ const person = {
 | In an event, `this` refers to the **element** that received the event. |
 | Methods like `call()`, `apply()`, and `bind()` can refer `this` to **any object**. |
 
+## JavaScript Events
+
+An HTML event can be something the browser does, or something a user does.
+
+Here are some examples of HTML events:
+
+* An HTML web page has finished loading
+* An HTML input field was changed
+* An HTML button was clicked
+
+HTML allows event handler attributes, **with JavaScript code**, to be added to HTML elements.
+
+```javascript
+//With single quotes:
+<element event='some JavaScript'>
+//With double quotes:
+<element event="some JavaScript">
+```
+
+### Common HTML Events
+
+![Screenshot 2022-11-21 at 10.56.37](images/Screenshot 2022-11-21 at 10.56.37.png)
+
+## JavaScript String Methods
+
+### JavaScript String Length
+
+```javascript
+let text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let length = text.length;
+```
+
+### Extracting String Parts
+
+There are 3 methods for extracting a part of a string:
+
+* `slice(*start*, *end*)`
+* `substring(*start*, *end*)`
+* `substr(*start*, *length*)`
+
+### slice()
+
+```javascript
+//Slice out a portion of a string from position 7 to position 13:
+let text = "Apple, Banana, Kiwi";
+let part = text.slice(7, 13);
+
+//If you omit the second parameter, the method will slice out the rest of the string:
+let text = "Apple, Banana, Kiwi";
+let part = text.slice(7);
+
+//If a parameter is negative, the position is counted from the end of the string:
+let text = "Apple, Banana, Kiwi";
+let part = text.slice(-12);
+
+//This example slices out a portion of a string from position -12 to position -6:
+let text = "Apple, Banana, Kiwi";
+let part = text.slice(-12, -6);
+```
+
+### substring()
+
+`substring()` is similar to `slice()`.
+
+The difference is that start and end values less than 0 are treated as 0 in `substring()`.
+
+```javascript
+let str = "Apple, Banana, Kiwi";
+let part = str.substring(7, 13);
+```
+
+### substr()
+
+`substr()` is similar to `slice()`.
+
+The difference is that the second parameter specifies the **length** of the extracted part.
+
+```javascript
+let str = "Apple, Banana, Kiwi";
+let part = str.substr(7, 6);
+
+//If you omit the second parameter, substr() will slice out the rest of the string.
+let str = "Apple, Banana, Kiwi";
+let part = str.substr(7);
+
+//If the first parameter is negative, the position counts from the end of the string.
+let str = "Apple, Banana, Kiwi";
+let part = str.substr(-4);
+```
+
+### replace()
+
+The `replace()` method replaces a specified value with another value in a string:
+
+```javascript
+let text = "Please visit Microsoft!";
+let newText = text.replace("Microsoft", "W3Schools");
+```
+
+* The `replace()` method does not change the string it is called on.
+* The `replace()` method returns a new string.
+* The `replace()` method replaces **only the first** match
+
+By default, the `replace()` method is case sensitive. Writing MICROSOFT (with upper-case) will not work
+
+To replace case insensitive, use a **regular expression** with an `/i` flag (insensitive):
+
+```javascript
+let text = "Please visit Microsoft!";
+let newText = text.replace(/MICROSOFT/i, "W3Schools");
+```
+
+To replace all matches, use a **regular expression** with a `/g` flag (global match):
+
+```javascript
+let text = "Please visit Microsoft and Microsoft!";
+let newText = text.replace(/Microsoft/g, "W3Schools");
+```
+
+### ReplaceAll()
+
+In 2021, JavaScript introduced the string method `replaceAll()`:
+
+```javascript
+text = text.replaceAll("Cats","Dogs");
+text = text.replaceAll("cats","dogs");
+```
+
+The `replaceAll()` method allows you to specify a regular expression instead of a string to be replaced.
+
+If the parameter is a regular expression, the global flag (g) must be set set, otherwise a TypeError is thrown.
+
+```javascript
+text = text.replaceAll(/Cats/g,"Dogs");
+text = text.replaceAll(/cats/g,"dogs");
+```
+
+### Converting to Upper and Lower Case
+
+A string is converted to upper case with `toUpperCase()`:
+
+A string is converted to lower case with `toLowerCase()`:
+
+```javascript
+let text1 = "Hello World!";
+let text2 = text1.toUpperCase();
+
+let text1 = "Hello World!";       // String
+let text2 = text1.toLowerCase();  // text2 is text1 converted to lower
+```
+
+### Note
+
+All string methods return a new string. They don't modify the original string.
+
+Formally said:
+
+Strings are immutable: Strings cannot be changed, only replaced.
+
+### trim()
+
+The `trim()` method removes whitespace from both sides of a string:
+
+```javascript
+let text1 = "      Hello World!      ";
+let text2 = text1.trim();
+```
+
+### trimStart()
+
+ECMAScript 2019 added the String method `trimStart()` to JavaScript.
+
+The `trimStart()` method works like `trim()`, but removes whitespace only from the start of a string.
+
+```javascript
+let text1 = "     Hello World!     ";
+let text2 = text1.trimStart();
+```
+
+### trimEnd()
+
+ECMAScript 2019 added the String method `trimEnd()` to JavaScript.
+
+The `trimEnd()` method works like `trim()`, but removes whitespace only from the end of a string.
+
+```javascript
+let text1 = "     Hello World!     ";
+let text2 = text1.trimEnd();
+```
+
+### charAt()
+
+The `charAt()` method returns the character at a specified index (position) in a string:
+
+```javascript
+let text = "HELLO WORLD";
+let char = text.charAt(0);
+```
+
+### Property Access
+
+```javascript
+let text = "HELLO WORLD";
+let char = text[0];
+```
+
+Note
+
+Property access might be a little **unpredictable:**
+
+* It makes strings look like arrays (but they are not)
+* If no character is found, [ ] returns undefined, while charAt() returns an empty string.
+* It is read only. str[0] = "A" gives no error (but does not work!)
+
+### split()
+
+A string can be converted to an array with the `split()` method:
+
+```javascript
+text.split(",")    // Split on commas
+text.split(" ")    // Split on spaces
+text.split("|")    // Split on pipe
+```
+
